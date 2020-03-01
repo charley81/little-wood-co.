@@ -1,0 +1,92 @@
+// imports
+@import 'config';
+@import 'utility';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Muli', Arial, Helvetica, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+// nav
+#main-nav {
+  background: $color-dark;
+  color: $color-light;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+
+  .logo {
+    border-bottom: 2px solid $color-primary;
+    padding-bottom: 0.5 rem;
+  }
+
+  i {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: rotate(90deg);
+      color: $color-primary;
+    }
+  }
+}
+
+// nav overlay
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  li {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+    transform: translateX(1000%);
+    transition: all 1s ease-in-out;
+  }
+
+  a {
+    color: $color-light;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-primary;
+      letter-spacing: 1px;
+    }
+  }
+
+  &.open li {
+    transform: translateX(0);
+  }
+}
