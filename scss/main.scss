@@ -132,7 +132,7 @@ li {
 
   img {
     height: 300px;
-    border-radius: 3px 3px 0 0;
+    border-radius: $border-radius $border-radius 0 0;
   }
 
   .container {
@@ -142,7 +142,7 @@ li {
 
     .item {
       border: 1px $color-dark solid;
-      border-radius: 3px;
+      border-radius: $border-radius;
     }
   }
 }
@@ -186,28 +186,39 @@ li {
   transform: translateY(0);
 }
 
-// form ====
-#main-form {
-  background-color: $color-primary;
-  display: flex;
-  flex-direction: column;
-  color: $color-dark;
-  border-radius: 3px;
+// section-c: contact ====
+#section-c .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-  input,
-  textarea {
-    display: block;
-    padding: 1rem;
-    margin: 1rem;
-    font-size: 1rem;
+  img {
+    height: 100%;
   }
 
-  h3 {
-    text-align: center;
-    padding-top: 1rem;
+  // form
+  #main-form {
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    color: $color-dark;
+    border-radius: $border-radius;
+
+    input,
+    textarea {
+      display: block;
+      padding: 1rem;
+      margin: 1rem;
+      font-size: 1rem;
+      border-radius: $border-radius;
+    }
+
+    h3 {
+      text-align: center;
+      padding-top: 1rem;
+    }
   }
 }
-// end form ====
+// end section-c: contact ====
 
 // footer ====
 #main-footer {
