@@ -71,3 +71,20 @@ window.addEventListener('scroll', () => {
   }
 });
 // end main nav opacity on scroll ====
+
+// smooth scrolling ====
+$('.nav-list a, .btn').on('click', function(event) {
+  if (this.hash !== '') {
+    event.preventDefault();
+
+    const { hash } = this;
+
+    $('html, body').animate(
+      {
+        scrollTop: $(hash).offset().top - 100,
+      },
+      800
+    );
+  }
+});
+// end smooth scrolling ====
