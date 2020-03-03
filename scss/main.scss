@@ -31,6 +31,9 @@ li {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 
   .logo {
     border-bottom: 2px solid $color-primary;
@@ -132,12 +135,53 @@ li {
     border-radius: 3px 3px 0 0;
   }
 
-  .item {
-    border: 1px $color-dark solid;
-    border-radius: 3px;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
 
-    &:nth-child(1) {
-      margin-bottom: 1rem;
+    .item {
+      border: 1px $color-dark solid;
+      border-radius: 3px;
     }
   }
+}
+
+// modal
+.modal-outer {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal-inner {
+    background: $color-light;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 3px;
+    max-width: 600px;
+    transform: translateY(-1000%);
+    transition: transform 1.25s ease-in-out;
+
+    h3 {
+      padding: 1rem 0;
+    }
+  }
+}
+
+.modal-outer.open .modal-inner {
+  transform: translateY(0);
 }

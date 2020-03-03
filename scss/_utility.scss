@@ -5,6 +5,13 @@
   padding: 1rem;
 }
 
+.container {
+  padding: 0 2rem;
+  margin: auto;
+  overflow: hidden;
+  max-width: 1000px;
+}
+
 // text
 .text {
   &-primary {
@@ -20,6 +27,8 @@
   border-radius: 3px;
   margin-top: 1rem;
   font-size: 1rem;
+  border: none;
+  outline: none;
 }
 
 .btn {
