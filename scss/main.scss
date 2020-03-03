@@ -186,7 +186,47 @@ li {
   transform: translateY(0);
 }
 
-// media queries
+// form ====
+#main-form {
+  background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  color: $color-dark;
+  border-radius: 3px;
+
+  input,
+  textarea {
+    display: block;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1rem;
+  }
+
+  h3 {
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+// end form ====
+
+// footer ====
+#main-footer {
+  background-color: $color-dark;
+  color: $color-light;
+  padding: 2rem;
+  text-align: center;
+}
+// end footer ====
+
+// media queries ====
+// tablet
+@media (min-width: 768px) {
+  .text-medium {
+    font-size: 3rem;
+  }
+}
+
+// desktop
 @media (min-width: 900px) {
   #section-a {
     .container {
